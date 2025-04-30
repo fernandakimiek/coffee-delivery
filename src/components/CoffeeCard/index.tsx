@@ -11,23 +11,28 @@ import {
 
 import CartButton from "../../assets/CartButton.svg";
 import CounterButton from "../../assets/Counter.svg";
+import { CoffeeItem } from "../../pages/Menu/coffees";
 
 interface CoffeeCardProps {
-  icon?: string;
+  coffeeItem: CoffeeItem;
 }
 
-export function CoffeeCard({ icon }: CoffeeCardProps) {
+export function CoffeeCard({ coffeeItem }: CoffeeCardProps) {
   return (
     <CoffeeContainer>
-      <ImgIcon src={icon} width={120} height={120} />
-      <TagContainer>
-        <TagTitle>TRADICIONAL</TagTitle>
-      </TagContainer>
-
-      <TitleS>Expresso Tradicional</TitleS>
-      <TextS>O tradicional café feito com água quente e grãos moídos</TextS>
+      <ImgIcon src={coffeeItem.icon} width={120} height={120} />
+      <div style={{ display: "flex", flexDirection: "row", gap: "2px" }}>
+        {coffeeItem.tags.length &&
+          coffeeItem.tags.map((item) => (
+            <TagContainer>
+              <TagTitle>{item}</TagTitle>
+            </TagContainer>
+          ))}
+      </div>
+      <TitleS>{coffeeItem.title}</TitleS>
+      <TextS>{coffeeItem.description}</TextS>
       <BuyContainer>
-        <TitleM>R$ 9,90</TitleM>
+        <TitleM>{coffeeItem.cost}</TitleM>
         <div style={{ display: "flex", gap: "10px" }}>
           <img src={CounterButton} />
           <img src={CartButton} />

@@ -1,10 +1,14 @@
 import {
   BackgroundContainer,
+  CoffeeMainImg,
   CoffeesContainer,
+  CoffeesItemsContainer,
   IconContainer,
   IntroContainer,
+  MainCoffeeContainer,
   TextIcon,
   TextIconContainer,
+  TitleContainer,
   TitleL,
   TitleSubtitle,
   TitleXl,
@@ -16,54 +20,61 @@ import DeliveryIcon from "../../assets/DeliveryIcon.svg";
 import ClockIcon from "../../assets/ClockIcon.svg";
 import CoffeeIcon from "../../assets/CoffeeIcon.svg";
 import { CoffeeCard } from "../../components/CoffeeCard";
-import ExpressoTradicional from "../../assets/ExpressoTradicional.svg";
+import { CoffeesItems } from "./coffees";
 
 export function Menu() {
   return (
-    <BackgroundContainer>
-      <IntroContainer>
-        <div>
-          <div style={{ width: "70%" }}>
-            <TitleXl>
-              Encontre o café perfeito para qualquer hora do dia
-            </TitleXl>
-            <TitleSubtitle>
-              Com o Coffee Delivery você recebe seu café onde estiver, a
-              qualquer hora
-            </TitleSubtitle>
-          </div>
+    <div>
+      <BackgroundContainer>
+        <IntroContainer>
+          <TitleContainer>
+            <div>
+              <TitleXl>
+                Encontre o café perfeito para qualquer hora do dia
+              </TitleXl>
+              <TitleSubtitle>
+                Com o Coffee Delivery você recebe seu café onde estiver, a
+                qualquer hora
+              </TitleSubtitle>
+            </div>
 
-          <TextIconContainer>
-            <TextIcon>
-              <IconContainer src={CartIcon} />
-              Compra simples e segura
-            </TextIcon>
+            <TextIconContainer>
+              <TextIcon>
+                <IconContainer src={CartIcon} />
+                Compra simples e segura
+              </TextIcon>
 
-            <TextIcon>
-              <IconContainer src={DeliveryIcon} />
-              Embalagem mantém o café intacto
-            </TextIcon>
+              <TextIcon>
+                <IconContainer src={DeliveryIcon} />
+                Embalagem mantém o café intacto
+              </TextIcon>
 
-            <TextIcon>
-              <IconContainer src={ClockIcon} />
-              Entrega rápida e rastreada
-            </TextIcon>
+              <TextIcon>
+                <IconContainer src={ClockIcon} />
+                Entrega rápida e rastreada
+              </TextIcon>
 
-            <TextIcon>
-              <IconContainer src={CoffeeIcon} />O café chega fresquinho até você
-            </TextIcon>
-          </TextIconContainer>
-        </div>
+              <TextIcon>
+                <IconContainer src={CoffeeIcon} />O café chega fresquinho até
+                você
+              </TextIcon>
+            </TextIconContainer>
+          </TitleContainer>
 
-        <div style={{ width: "30%", marginRight: 250 }}>
-          <img src={MainCoffee} />
-        </div>
-      </IntroContainer>
+          <MainCoffeeContainer>
+            <CoffeeMainImg src={MainCoffee} />
+          </MainCoffeeContainer>
+        </IntroContainer>
+      </BackgroundContainer>
 
       <CoffeesContainer>
         <TitleL> Nossos cafés </TitleL>
-        <CoffeeCard icon={ExpressoTradicional} />
+        <CoffeesItemsContainer>
+          {CoffeesItems.map((coffeeItem) => (
+            <CoffeeCard coffeeItem={coffeeItem} />
+          ))}
+        </CoffeesItemsContainer>
       </CoffeesContainer>
-    </BackgroundContainer>
+    </div>
   );
 }

@@ -6,8 +6,6 @@ export const CoffeeContainer = styled.div`
   align-items: center;
   height: 310px;
   width: 256px;
-  margin-left: 10rem;
-  margin-right: 10rem;
   border-radius: 10px 50px 10px 50px;
   background-color: ${(props) => props.theme["base-card"]};
 `;
