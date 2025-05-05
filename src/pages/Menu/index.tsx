@@ -19,8 +19,8 @@ import CartIcon from "../../assets/CartIcon.svg";
 import DeliveryIcon from "../../assets/DeliveryIcon.svg";
 import ClockIcon from "../../assets/ClockIcon.svg";
 import CoffeeIcon from "../../assets/CoffeeIcon.svg";
-import { CoffeeCard } from "../../components/CoffeeCard";
-import { CoffeesItems } from "./coffees";
+import { CoffeeCard } from "./components/CoffeeCard";
+import { CoffeesItems } from "../../utils/coffees";
 
 export function Menu() {
   return (

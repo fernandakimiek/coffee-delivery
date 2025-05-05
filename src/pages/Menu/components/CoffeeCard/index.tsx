@@ -9,9 +9,9 @@ import {
   TitleM,
 } from "./styles";
 
-import CartButton from "../../assets/CartButton.svg";
-import CounterButton from "../../assets/Counter.svg";
-import { CoffeeItem } from "../../pages/Menu/coffees";
+import CartButton from "../../../../assets/CartButton.svg";
+import CounterButton from "../../../../assets/Counter.svg";
+import { CoffeeItem } from "../../../../utils/coffees";
 
 interface CoffeeCardProps {
   coffeeItem: CoffeeItem;

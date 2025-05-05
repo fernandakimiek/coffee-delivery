@@ -7,7 +7,8 @@ export const OrderContainer = styled.div`
   margin-left: 10rem;
   margin-right: 10rem;
   margin-top: 5rem;
-  gap: 5rem;
+  gap: 3rem;
+  justify-content: center;
 `;
 
 export const TitleXS = styled.p`
@@ -54,6 +55,12 @@ export const TextRegularS = styled(TextRegular)`
   color: ${(props) => props.theme["base-text"]};
 `;
 
+export const TextBoldL = styled(TextRegular)`
+  font-size: 20px;
+  color: ${(props) => props.theme["base-subtitle"]};
+  font-weight: bold;
+`;
+
 export const CheckoutFormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -88,7 +95,6 @@ export const InputContainer = styled.div`
 `;
 
 export const BaseButton = styled.button`
-  width: 100%;
   border: 2;
   border-color: transparent;
   padding: 1rem;
@@ -97,7 +103,7 @@ export const BaseButton = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   gap: 0.5rem;
   font-size: 12px;
@@ -126,4 +132,59 @@ export const OptionPaymentContainer = styled.div`
   justify-content: start;
   place-self: center;
   margin-bottom: 2rem;
+`;
+
+export const CoffeesOrderContainer = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 498px;
+  min-width: 448px;
+  border-radius: 10px 50px 10px 50px;
+  background-color: ${(props) => props.theme["base-card"]};
+`;
+
+export const CoffeesItemsContainer = styled.div`
+  max-height: 280px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: 1rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ValuesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
+  gap: 1rem;
+`;
+
+export const ConfirmButton = styled.button`
+  border: 2;
+  border-color: transparent;
+  padding: 1rem;
+  border-radius: 6px;
+  background: ${(props) => props.theme["yellow"]};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+
+  cursor: pointer;
+  height: 51px;
+
+  color: ${(props) => props.theme["white"]};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme["yellow-dark"]};
+  }
 `;

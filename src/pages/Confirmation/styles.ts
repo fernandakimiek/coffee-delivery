@@ -1,0 +1,49 @@
+import styled from "styled-components";
+
+export const ConfirmationContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 5rem;
+`;
+
+export const TitleL = styled.p`
+  font-family: "Baloo 2", monospace;
+  font-size: 32px;
+  line-height: 130%;
+  font-weight: bolder;
+  color: ${(props) => props.theme["yellow-dark"]};
+`;
+
+export const TextRegular = styled.p`
+  font-family: "Roboto", sans-serif;
+  line-height: 130%;
+`;
+
+export const TextRegularM = styled(TextRegular)`
+  font-size: 16px;
+  color: ${(props) => props.theme["base-text"]};
+`;
+
+export const TextRegularL = styled(TextRegular)`
+  font-size: 20px;
+  color: ${(props) => props.theme["base-subtitle"]};
+  font-weight: lighter;
+`;
+
+export const OrderBorderContainer = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 270px;
+  min-width: 570px;
+  border-radius: 10px 50px 10px 50px;
+  background-color: transparent;
+  border: solid ${(props) => props.theme["purple"]} 1px;
+`;

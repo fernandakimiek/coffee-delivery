@@ -5,18 +5,25 @@ import {
   CheckoutFormContainer,
   CheckoutMapImg,
   CheckoutTextContainer,
+  CoffeesItemsContainer,
+  CoffeesOrderContainer,
+  ConfirmButton,
   InputContainer,
   OptionPaymentContainer,
   OrderContainer,
+  TextBoldL,
   TextRegularM,
   TextRegularS,
   TitleXS,
+  ValuesContainer,
 } from "./styles";
 import MapIcon from "../../assets/Map.svg";
 import MoneyIcon from "../../assets/IconMoney.svg";
 import CreditCardIcon from "../../assets/CreditCard.svg";
 import DebitCardIcon from "../../assets/DebitCard.svg";
 import MoneyOptionIcon from "../../assets/MoneyOption.svg";
+import { CoffeeCard } from "./components/CoffeeCard";
+import { CoffeesItems } from "../../utils/coffees";
 
 export function Order() {
   return (
@@ -64,12 +71,12 @@ export function Order() {
               CARTÃO DE CRÉDITO
             </BaseButton>
             <BaseButton>
-              <img src={CreditCardIcon} style={{ alignSelf: "start" }} />
-              CARTÃO DE CRÉDITO
+              <img src={DebitCardIcon} style={{ alignSelf: "start" }} />
+              CARTÃO DE DÉBITO
             </BaseButton>
             <BaseButton>
-              <img src={CreditCardIcon} style={{ alignSelf: "start" }} />
-              CARTÃO DE CRÉDITO
+              <img src={MoneyOptionIcon} style={{ alignSelf: "start" }} />
+              DINHEIRO
             </BaseButton>
           </OptionPaymentContainer>
         </CheckoutContainer>
@@ -77,6 +84,46 @@ export function Order() {
 
       <div>
         <TitleXS>Cafés selecionados</TitleXS>
+        <CoffeesOrderContainer>
+          <CoffeesItemsContainer>
+            {CoffeesItems.map((item) => {
+              return <CoffeeCard coffeeItem={item} />;
+            })}
+          </CoffeesItemsContainer>
+          <ValuesContainer>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <TextRegularS>Total de itens</TextRegularS>
+              <TextRegularS>R$ 29,70</TextRegularS>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <TextRegularS>Entrega</TextRegularS>
+              <TextRegularS>R$ 3,50</TextRegularS>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <TextBoldL>Total</TextBoldL>
+              <TextBoldL>R$ 33,50</TextBoldL>
+            </div>
+            <ConfirmButton>CONFIRMAR PEDIDO</ConfirmButton>
+          </ValuesContainer>
+        </CoffeesOrderContainer>
       </div>
     </OrderContainer>
   );
